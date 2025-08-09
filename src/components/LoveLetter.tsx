@@ -24,39 +24,45 @@ export const LoveLetter = () => {
           {/* Letter Content */}
           <div className="space-y-6 font-sans text-foreground/80 leading-relaxed">
             <p className="text-lg">
-              My Dearest Little Chick,
+              Habibti Sara,
             </p>
             
             <p>
-              As I sit here thinking about you on your special day, my heart overflows with 
+              It breaks my heart that i can't be with you on your special day, but my heart overflows with 
               so much love that words seem insufficient. You've brought colors to my world 
               that I never knew existed, and joy that I never thought possible.
             </p>
             
             <p>
-              Every day with you feels like a gift. Your laugh is my favorite sound, 
-              your smile is my favorite sight, and your happiness is my favorite mission. 
+              Every day with you is a gift from god. Your laugh is my favorite sound, 
+              your smile is my favorite sight, your eyes are my stars, your face is my moon and your happiness is my favorite mission. 
               You have this incredible way of making ordinary moments feel extraordinary, 
               just by being you.
             </p>
+
+            <p>
+              I know we have some difficulties, but I love you more than words can express and I will always be there for you.
+              Together we can face any challenge and overcome any obstacle. 
+              your existence and your love makes me stronger, you give me a reason to smile and a reason to be happy.
+            </p>
             
             <p>
-              I love how you see the world with such wonder and kindness. I love your 
-              cute little habits, the way you scrunch your nose when you're thinking, 
+              I love how you giggle while talking and how you treat everyone with kindness. I love your 
+              jokes and stories. I love the way you do everything with such grace and passion, 
               and how you make everything better just by being there. You truly are 
-              my little chick - precious, adorable, and absolutely perfect.
+              precious, adorable, and absolutely perfect. You are my joje.
             </p>
             
             <p>
               On this birthday, I want you to know that you are cherished beyond measure. 
               You are my best friend, my greatest love, and my biggest blessing. I can't 
-              wait to celebrate many more birthdays with you, creating countless more 
+              wait to spend every moment with you, creating countless more 
               beautiful memories together.
             </p>
             
             <p className="text-lg font-medium text-primary">
-              Happy Birthday, my love. Here's to another year of adventures, laughter, 
-              and endless love. You mean everything to me. 💕
+              Happy Birthday, my love. I wish you a year full of adventures, laughter, luck 
+              and endless love. You mean everything to me. You are my world. 🌍💕
             </p>
             
             <div className="text-right pt-6">

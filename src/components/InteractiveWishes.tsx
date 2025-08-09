@@ -8,7 +8,11 @@ const wishes = [
   "May your heart always be as light as a feather 🪶",
   "Wishing you laughter that echoes through the days 😊",
   "May you always feel as loved as you are today 💖",
-  "Here's to another year of being absolutely amazing ✨"
+  "May all the problems disappear and you always be happy ✨",
+  "May our love grow stronger with every sunrise and sunset 🌅",
+  "May every moment today remind you how special you are to me 💐",
+  "Hope next year I will be with you 💗",
+  "I will always be with you and supporting every step of your journey 💕💝💘",
 ];
 
 export const InteractiveWishes = () => {
@@ -18,55 +22,49 @@ export const InteractiveWishes = () => {
   const revealWish = (index: number) => {
     if (!revealedWishes.includes(index)) {
       setRevealedWishes([...revealedWishes, index]);
-      setCurrentWish(wishes[index]);
     }
+    setCurrentWish(wishes[index]); // Always allow re-reading
   };
 
   return (
-    <section className="py-20 px-6 bg-gradient-romantic">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-romantic text-5xl md:text-6xl text-white mb-8 drop-shadow-lg">
+    <section className="py-20 px-6  bg-gradient-romantic relative overflow-hidden">
+      {/* Soft glowing background hearts */}
+      <div className="absolute -top-20 -left-20 text-pink-300/30 text-[200px] animate-pulse">💗</div>
+      <div className="absolute bottom-0 right-0 text-rose-300/30 text-[150px] animate-pulse">💕</div>
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <h2 className="font-romantic text-5xl md:text-6xl text-rose-700 mb-8 drop-shadow-lg">
           Birthday Wishes
         </h2>
         
-        <p className="font-sans text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-          Click on the hearts below to reveal special birthday wishes for my little chick 💕
+        <p className="font-sans text-xl text-rose-800/90 mb-12 max-w-2xl mx-auto">
+          Click on the hearts below to reveal or re-read special wishes 💕
         </p>
         
         {/* Interactive Hearts Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           {wishes.map((_, index) => (
             <button
-              key={index}
-              onClick={() => revealWish(index)}
-              className={`relative group transition-romantic transform hover:scale-110 ${
-                revealedWishes.includes(index) 
-                  ? 'animate-heart-beat' 
-                  : 'hover:animate-pulse'
-              }`}
-              disabled={revealedWishes.includes(index)}
-            >
-              <div className={`w-20 h-20 rounded-full flex items-center justify-center shadow-warm transition-romantic ${
-                revealedWishes.includes(index)
-                  ? 'bg-white text-primary scale-110 shadow-romantic'
-                  : 'bg-white/20 text-white/80 hover:bg-white/30'
-              }`}>
-                <span className="text-3xl">
-                  {revealedWishes.includes(index) ? '💖' : '🤍'}
-                </span>
-              </div>
-              
-              {!revealedWishes.includes(index) && (
-                <div className="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-romantic"></div>
-              )}
-            </button>
+            key={index}
+            onClick={() => revealWish(index)}
+            className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-transform transform hover:scale-110 hover:rotate-6 ${
+              revealedWishes.includes(index) 
+                ? 'bg-pink-100 text-rose-600 shadow-[0_0_20px_rgba(255,182,193,0.7)]'
+                : 'bg-rose-300/30 text-rose-200 hover:bg-pink-200/60'
+            } ${revealedWishes.includes(index) ? 'animate-pulse-soft' : 'hover:animate-bounce'}`}
+          >
+            <span className="text-3xl">
+              {revealedWishes.includes(index) ? '💖' : '🤍'}
+            </span>
+          </button>
+          
           ))}
         </div>
         
         {/* Current Wish Display */}
         {currentWish && (
-          <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 shadow-warm border border-white/30 animate-fade-in-up">
-            <p className="font-sans text-xl text-white leading-relaxed">
+          <div className="bg-white/40 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-pink-200 animate-fade-in-up">
+            <p className="font-sans text-xl text-rose-700 leading-relaxed animate-slide-up">
               {currentWish}
             </p>
           </div>
@@ -74,12 +72,12 @@ export const InteractiveWishes = () => {
         
         {/* Progress Indicator */}
         <div className="mt-8">
-          <p className="font-sans text-white/70 mb-4">
+          <p className="font-sans text-rose-700/80 mb-4">
             {revealedWishes.length} of {wishes.length} wishes revealed
           </p>
-          <div className="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-            <div 
-              className="h-full bg-white transition-romantic rounded-full"
+          <div className="w-full bg-pink-300/30 rounded-full h-2 overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-pink-400 to-rose-400 transition-all duration-500 rounded-full"
               style={{ width: `${(revealedWishes.length / wishes.length) * 100}%` }}
             ></div>
           </div>
@@ -87,8 +85,8 @@ export const InteractiveWishes = () => {
         
         {revealedWishes.length === wishes.length && (
           <div className="mt-8 animate-fade-in-up">
-            <div className="text-6xl mb-4">🎉</div>
-            <p className="font-romantic text-3xl text-white">
+            <div className="text-6xl mb-4 animate-bounce">🎉</div>
+            <p className="font-romantic text-3xl text-rose-700">
               All wishes revealed! You're amazing, my little chick! 🐣💕
             </p>
           </div>
